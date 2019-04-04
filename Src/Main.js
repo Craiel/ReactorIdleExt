@@ -31,7 +31,7 @@ RID.setModule("Main", function() {
         this.interval = setInterval(function() {
             e.game.tick(), t != e.game.getTickInterval(e.playFast) && e.updateInterval(), 1 == e.playFast && (e.game.addBonusTicks(-1), e.game.getBonusTicks() <= 0 && (e.playFast = !1, e.game.getEventManager().invokeEvent(UiEvent.playNormalTriggered), e.updateInterval()))
         }, t);
-        setInterval(function() { e.game.addBonusTicks(1); }, 3e5);
+        setInterval(function() { e.game.addBonusTicks(1); }, 5000);
     }, r.prototype.destroy = function() {
         this.saveHandler.stopAutoSave(), clearInterval(this.submitStatInterval), this.submitStatInterval = null
     }, r.prototype.getGame = function() {

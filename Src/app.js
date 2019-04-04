@@ -1,8 +1,6 @@
-var e = RID.getModule("Main");
-
 RID.start = function(){
-    var i = new e;
-    i.init(!0);
-
+    var mainModule = RID.getModule("Main");
+    RID.main = new mainModule();
+    RID.main.init(!0);
     RID.isRunning = true;
 };
