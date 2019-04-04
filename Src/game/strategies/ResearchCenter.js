@@ -7,11 +7,7 @@ RID.setModule("strategies/ResearchCenter", function() {
     }, e.prototype.calculate = function(t) {
         t.researchProduction += e._getAmount(this.tile.getReactor(), this.tile.getMeta())
     }, e._getAmount = function(e, t) {
-        var r = e.getUpgradeBonuses().components[t.id].researchPointsProductionMultiplayer,
-            n = e.getGame().getPurchaseInfo("researchproduction"),
-            o = n.amount ? n.meta.multiplayer : 1,
-            a = e.getGame().getPurchaseInfo("researchproduction2"),
-            c = a.amount ? a.meta.multiplayer : 1
-        return t.strategy.researchProduction * r * o * c
+        var r = e.getUpgradeBonuses().components[t.id].researchPointsProductionMultiplayer;
+        return t.strategy.researchProduction * r
     }, e
 }());

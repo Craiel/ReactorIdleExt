@@ -60,8 +60,7 @@ RID.setModule("calculators/Calculator", function(e) {
         })
         var r = this.reactor.getPower() + e.powerMaxProduction
         e.powerToMoney = Math.min(e.maxPowerToMoney, r), r -= e.powerToMoney, r > this.reactor.getMaxPower() && (r = this.reactor.getMaxPower()), e.powerProduction = r - this.reactor.getPower(), e.moneyProduction += e.powerToMoney
-        var o = this.reactor.getGame().getPurchaseInfo("extramoney")
-        e.moneyProduction *= o.amount ? o.meta.multiplayer : 1, this.reactor.addPower(e.powerProduction), this.game.addMoney(e.moneyProduction), this.game.addResearchPoints(e.researchProduction), this.reactor.getEventManager().invokeEvent(ReactorEvent.tickResult, e)
+        this.reactor.addPower(e.powerProduction), this.game.addMoney(e.moneyProduction), this.game.addResearchPoints(e.researchProduction), this.reactor.getEventManager().invokeEvent(ReactorEvent.tickResult, e)
     }, t.prototype.calculateOverheatedElements = function() {
         var e = this.reactor.getTiles()
         for (var t in e) {

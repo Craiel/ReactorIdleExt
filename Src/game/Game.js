@@ -2,21 +2,17 @@
 RID.setModule("game/Game", function() {
     var t = RID.getModule("game/Reactor");
     var e = RID.getModule("base/EventManager");
-    var s = RID.getModule("game/PurchaseManager");
-    var r = RID.getModule("base/ConfirmedTimestamp");
 
     var n = function(r) {
-        this.meta = r, this.money = r.startingMoney, this.totalMoney = 0, this.totalTicks = 0, this.researchPoints = r.startingResearchPoints, this.researches = {}, this.externalPurchases = {}, this.purchases = {}, this.reactors = {}
+        this.meta = r, this.money = r.startingMoney, this.totalMoney = 0, this.totalTicks = 0, this.researchPoints = r.startingResearchPoints, this.researches = {}, this.reactors = {}
         for (var n in this.meta.reactors) {
             var r = this.meta.reactors[n]
             this.reactors[r.id] = new t(this, r)
         }
-        this.eventManager = new e, this.purchaseManager = new s(this), this.bonusTicks = 0
+        this.eventManager = new e, this.bonusTicks = 0
     }
     return n.prototype.getEventManager = function() {
         return this.eventManager
-    }, n.prototype.getPurchaseManager = function() {
-        return this.purchaseManager
     }, n.prototype.getMeta = function() {
         return this.meta
     }, n.prototype.getResearch = function(t) {
@@ -49,37 +45,13 @@ RID.setModule("game/Game", function() {
         return this.researchPoints
     }, n.prototype.getReactor = function(t) {
         return this.reactors[t]
-    }, n.prototype.addPurchase = function(t) {
-        this.purchases[t] || (this.purchases[t] = 0), this.purchases[t] += 1, this.eventManager.invokeEvent(GameEvent.purchasesChanged, t)
-    }, n.prototype.removePurchase = function(t) {
-        this.purchases[t] || (this.purchases[t] = 1), this.purchases[t] -= 1, this.eventManager.invokeEvent(GameEvent.purchasesChanged, t)
-    }, n.prototype.getPurchase = function(t) {
-        return this.purchases[t] ? Number(this.purchases[t]) : 0
-    }, n.prototype.getPurchases = function() {
-        return this.purchases
-    }, n.prototype.setExternalPurchase = function(t, e) {
-        this.externalPurchases[t] = e
-    }, n.prototype.removeExternalPurchase = function(t) {
-        delete this.externalPurchases[t]
-        var e = {}
-        for (var s in this.externalPurchases) s != t && (e[s] = this.externalPurchases[s])
-        this.externalPurchases = e
-    }, n.prototype.getExternalPurchases = function() {
-        return this.externalPurchases
-    }, n.prototype.getExternalPurchase = function(t) {
-        return this.externalPurchases[t]
-    }, n.prototype.getPurchaseInfo = function(t) {
-        return {
-            meta: this.meta.purchasesById[t],
-            amount: this.getPurchase(t)
-        }
     }, n.prototype.tick = function() {
         for (var t in this.reactors) this.reactors[t].tick()
         this.totalTicks += 1
     }, n.prototype.getTickInterval = function(t) {
         if (t) return 1
         var e = 1
-        return e += this.getResearch("chronometer") ? this.getResearch("chronometer") : 0, e += this.getPurchaseInfo("extraticks").amount ? this.getPurchaseInfo("extraticks").meta.bonusTicks : 0, Math.round(1e3 / e)
+        return e += this.getResearch("chronometer") ? this.getResearch("chronometer") : 0, Math.round(1e3 / e)
     }, n.prototype.getSaveData = function() {
         var t = []
         t[0] = this.money, t[1] = this.researchPoints, t[2] = this.researches, t[3] = {}
@@ -88,13 +60,8 @@ RID.setModule("game/Game", function() {
     }, n.prototype.updateFromSaveData = function(t, e) {
         if (t) {
             this.money = Number(t[0]), this.totalMoney = Number(t[7] ? t[7] : 0), this.totalTicks = Number(t[8] ? t[8] : 0), this.researchPoints = Number(t[1]), this.researches = t[2] ? t[2] : {}
-            for (var s in this.reactors) this.reactors[s].updateFromSaveData(t[3][s])
-            if (this.setBonusTicks(t[5] ? Number(t[5]) : 0), this.purchases = t[6] ? t[6] : {}, this.externalPurchases = t[9] ? t[9] : {}, e && !isNaN(Number(t[4])) && r.getConfirmedTimestamp()) {
-                var n = r.getConfirmedTimestamp() - Number(t[4]),
-                    i = Math.round(n / (1e3 * this.meta.offlineSlower) * (1e3 / this.getTickInterval(!1))),
-                    o = this.meta.maxBonusTicks * (1e3 / this.getTickInterval(!1))
-                i > o && (i = o), i < this.meta.minBonusTicks && (i = 0), logger.info("Bonus ticks gained: " + i), this.addBonusTicks(i)
-            }
+            for (var s in this.reactors) this.reactors[s].updateFromSaveData(t[3][s]);
+            this.setBonusTicks(t[5] ? Number(t[5]) : 0);
         }
     }, n
 }());

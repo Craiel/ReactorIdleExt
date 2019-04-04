@@ -9,7 +9,6 @@ var UiEvent = {
     showResearchTab : "showResearchTab",
     showUpgradesTab : "showUpgradesTab",
     showSettings : "showSettings",
-    showPurchases : "showPurchases",
     showHelp : "showHelp",
     pauseTime : "pauseTime",
     playTime : "playTime",

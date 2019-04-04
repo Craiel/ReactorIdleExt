@@ -1,17 +1,12 @@
 RID.setModule("ui/Settings", function() {
 
-    var t = RID.getModule("base/UrlHandler");
-    var a = RID.getModule("base/SaveHandler");
-
     var s = "settings",
         i = function(e) {
             this.main = e, this.saveHandler = this.main.getSaveHandler(), this.isVisible = !1
         }
     return i.prototype.display = function() {
         if (!this.isVisible) {
-            $("body").append(Handlebars.templates.settings({
-                hasPaypal: "kongregate" != t.identifySite()
-            }))
+            $("body").append(Handlebars.templates.settings({}))
             var a = this
             this.isVisible = !0
             var s = $("#settings")

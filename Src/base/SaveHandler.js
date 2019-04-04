@@ -17,7 +17,7 @@ RID.setModule("base/SaveHandler", function() {
     }, t.prototype.updateFromSaveData = function(t, a) {
         if (!t) return !1
         try {
-            return t = JSON.parse(e.decompressFromBase64(t)), this.game.updateFromSaveData(t, a), this.main.getExternalApi().loadPurchases(), !0
+            return t = JSON.parse(e.decompressFromBase64(t)), this.game.updateFromSaveData(t, a), !0
         } catch (r) {
             console.error(r)
         }

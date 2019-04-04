@@ -18,7 +18,7 @@ RID.setModule("ui/Info", function() {
         }), this.reactor.getEventManager().addListener(ReactorEvent.allowAutoRebuildChanged, i, function(t) {
             $("#autoRebuildButton").html("Auto rebuild: " + (t ? '<span class="on">ON</span>' : '<span class="off">OFF</span>'))
         }), this.reactor.getEventManager().addListener(ReactorEvent.tickResult, i, function() {
-            n.lastShowInfoEvent && n.displayInfo(n.lastShowInfoEvent[0], n.lastShowInfoEvent[1]), n.controlExtrasButton()
+            n.lastShowInfoEvent && n.displayInfo(n.lastShowInfoEvent[0], n.lastShowInfoEvent[1])
         }), $("#reactorsButton").click(function() {
             n.game.getEventManager().invokeEvent(UiEvent.showReactors)
         }), $("#researchButton").click(function() {
@@ -27,15 +27,11 @@ RID.setModule("ui/Info", function() {
             n.game.getEventManager().invokeEvent(UiEvent.showUpgradesTab)
         }), $("#settingsButton").click(function() {
             n.game.getEventManager().invokeEvent(UiEvent.showSettings)
-        }), $("#purchasesButton").click(function() {
-            n.game.getEventManager().invokeEvent(UiEvent.showPurchases)
         }), $("#autoRebuildButton").click(function() {
             n.reactor.setAllowAutoRebuild(!n.reactor.getAllowAutoRebuild())
         }), $("#helpButton").click(function() {
             n.game.getEventManager().invokeEvent(UiEvent.showHelp)
-        }), n.game.getResearch("windTurbineAutoRebuild") || $("#autoRebuildButton").hide(), n.reactor.setAllowAutoRebuild(n.reactor.getAllowAutoRebuild()), this.controlExtrasButton(), this.setupSpeedControls()
-    }, o.prototype.controlExtrasButton = function() {
-        this.game.getResearch("solarCell") ? $("#purchasesButton").show() : $("#purchasesButton").hide()
+        }), n.game.getResearch("windTurbineAutoRebuild") || $("#autoRebuildButton").hide(), n.reactor.setAllowAutoRebuild(n.reactor.getAllowAutoRebuild()), this.setupSpeedControls()
     }, o.prototype.displayInfo = function(t, e) {
         if (this.container) {
             this.lastShowInfoEvent = null

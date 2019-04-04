@@ -15,7 +15,6 @@
     <link href="css/settings.css" type="text/css" rel="stylesheet">
     <link href="css/help.css" type="text/css" rel="stylesheet">
     <link href="css/game.css" type="text/css" rel="stylesheet">
-    <link href="css/purchases.css" type="text/css" rel="stylesheet">
     <link href="css/tiles2.css" type="text/css" rel="stylesheet">
     <link href="css/confirmBox.css" type="text/css" rel="stylesheet">
     <link rel="shortcut icon" href="https://reactoridle.com/favicon.ico">
@@ -36,7 +35,6 @@
     <script src="src/template/help.tpl.js"></script>
     <script src="src/template/info.tpl.js"></script>
     <script src="src/template/overview.tpl.js"></script>
-    <script src="src/template/purchases.tpl.js"></script>
     <script src="src/template/reactors.tpl.js"></script>
     <script src="src/template/research.tpl.js"></script>
     <script src="src/template/settings.tpl.js"></script>
@@ -55,15 +53,10 @@
 
     <script src="src/config/Meta.js"></script>
 
-    <script src="src/base/Server/Dummy.js"></script>
-    <script src="src/base/Server/Paypal.js"></script>
-
-    <script src="src/base/ConfirmedTimestamp.js"></script>
     <script src="src/base/EventManager.js"></script>
     <script src="src/base/logger.js"></script>
     <script src="src/base/numberFormat.js"></script>
     <script src="src/base/SaveHandler.js"></script>
-    <script src="src/base/UrlHandler.js"></script>
 
     <script src="src/game/calculators/UpgradeCalculator.js"></script>
     <script src="src/game/calculators/Calculator.js"></script>
@@ -97,7 +90,6 @@
     <script src="src/game/strategies/Factory.js"></script>
 
     <script src="src/game/Tile.js"></script>
-    <script src="src/game/PurchaseManager.js"></script>
     <script src="src/game/Reactor.js"></script>
     <script src="src/game/Game.js"></script>
 
@@ -106,7 +98,6 @@
     <script src="src/ui/Help.js"></script>
     <script src="src/ui/Info.js"></script>
     <script src="src/ui/Overview.js"></script>
-    <script src="src/ui/Purchases.js"></script>
     <script src="src/ui/ReactorMap.js"></script>
     <script src="src/ui/Reactor.js"></script>
     <script src="src/ui/Reactors.js"></script>
@@ -123,7 +114,7 @@
 
     <script src="src/app.js"></script>
 
-<body onload="RID.start()">
+<body oncontextmenu="return false;" onload="RID.start()">
 
 <div id="main">
     <div id="rightCommercial"></div>

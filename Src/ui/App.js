@@ -5,12 +5,11 @@ RID.setModule("ui/App", function() {
     var i = RID.getModule("ui/Research");
     var a = RID.getModule("ui/Upgrades");
     var r = RID.getModule("ui/Settings");
-    var n = RID.getModule("ui/Purchases");
     var o = RID.getModule("ui/Help");
 
     var h = "appUi",
         d = function(t) {
-            this.main = t, this.game = t.getGame(), this.gameUi = null, this.reactorsUi = null, this.researchUi = null, this.upgradesUi = null, this.settingsUi = new r(t), this.purchasesUi = new n(t), this.helpUi = new o, this.lastReactorId = null
+            this.main = t, this.game = t.getGame(), this.gameUi = null, this.reactorsUi = null, this.researchUi = null, this.upgradesUi = null, this.settingsUi = new r(t), this.helpUi = new o, this.lastReactorId = null
         }
     return d.prototype.display = function(e) {
         var s = this
@@ -24,8 +23,6 @@ RID.setModule("ui/App", function() {
             t || (t = s.lastReactorId), s.displayGame(t)
         }), this.game.getEventManager().addListener(UiEvent.showSettings, h, function() {
             s.settingsUi.display()
-        }), this.game.getEventManager().addListener(UiEvent.showPurchases, h, function() {
-            s.purchasesUi.display()
         }), this.game.getEventManager().addListener(UiEvent.showHelp, h, function() {
             s.helpUi.display()
         }), this.displayReactors()
