@@ -75,6 +75,7 @@
         $(".component").each(function() {
             c = $(this).attr("class"), a = c.replace("component", ""), i.push(a)
         }), i.sort();
+
         for (var n = null, e = 0, o = 0; o < i.length; o++) i[o] != n ? (e > 1 && (bccs = e - 1, t[n] = bccs), n = i[o], e = 1) : e++;
         var l = "";
         return bySortedValue(t, function(i, t) {
@@ -87,18 +88,35 @@
             return;
         }
 
-        try {
-            0 == $("#q_loader").length && $(".overviewBox").prepend('<div id="q_loader" class="textLine"><span class="productionTitle">Battery remaining: </span><span id="batteryTime" class="power">Loading..</span></div>'), q_d = {
-                income: q_str_to_number($("#income").html()),
-                powerProduction: q_str_to_number($("#powerProduction").html()),
-                maxPower: q_str_to_number($("#maxPower").html()),
-                currentPower: q_str_to_number($("#power").html())
-            }, q_ticks = 5, q_batteryLeft = q_d.maxPower - q_d.currentPower, q_powerToBattery = q_d.powerProduction - q_d.income, q_timeleft = q_convertToHHMM(q_batteryLeft / q_powerToBattery / q_ticks / 3600), $("#batteryTime").html(q_timeleft), q_total_income = q_powerToBattery + q_d.income, q_income_30 = q_total_income * q_ticks * 1800, 0 == $("#q_future_income").length && $(".overviewBox").prepend('<div id="q_future_income" class="textLine"><span class="productionTitle">Money /30 min: </span><span id="income30" class="money">Loading..</span></div>'), $("#income30").html(q_number_to_str(q_income_30)), 0 == $("#q_get_list").length && ($(".components").append('<div style="padding-top: 10px; clear: both;"><a style="cursor: pointer;" id="q_get_list">Refresh list</a> <span style="color: #696969;">|</span> <a style="cursor: pointer;" id="q_get_list_close">Close</a></div>'), $("#q_get_list").click(function() {
-                q_components = q_get_components(), 0 == $(".q_comp_list").length ? $(".components").append('<div style="padding-top: 10px; clear: both;" class="q_comp_list">' + q_components + "</div>") : $(".q_comp_list").html(q_components)
-            }), $("#q_get_list_close").click(function() {
-                $(".q_comp_list").html("")
-            }))
-        } catch (i) {}
+        0 == $("#q_loader").length && $(".overviewBox").prepend('<div id="q_loader" class="textLine"><span class="productionTitle">Battery remaining: </span><span id="batteryTime" class="power">Loading..</span></div>');
+
+        q_d = {
+            income: q_str_to_number($("#income").html()),
+            powerProduction: q_str_to_number($("#powerProduction").html()),
+            maxPower: q_str_to_number($("#maxPower").html()),
+            currentPower: q_str_to_number($("#power").html())
+        };
+
+        q_ticks = 5;
+        q_batteryLeft = q_d.maxPower - q_d.currentPower;
+        q_powerToBattery = q_d.powerProduction - q_d.income;
+        q_timeleft = q_convertToHHMM(q_batteryLeft / q_powerToBattery / q_ticks / 3600);
+
+        $("#batteryTime").html(q_timeleft);
+        q_total_income = q_powerToBattery + q_d.income;
+        q_income_30 = q_total_income * q_ticks * 1800;
+
+        0 == $("#q_future_income").length && $(".overviewBox").prepend('<div id="q_future_income" class="textLine"><span class="productionTitle">Money /30 min: </span><span id="income30" class="money">Loading..</span></div>');
+        $("#income30").html(q_number_to_str(q_income_30));
+
+        0 == $("#q_get_list").length && $(".components").append('<div style="padding-top: 10px; clear: both;"><a style="cursor: pointer;" id="q_get_list">Refresh list</a> <span style="color: #696969;">|</span> <a style="cursor: pointer;" id="q_get_list_close">Close</a></div>');
+        $("#q_get_list").click(function() {
+            q_components = q_get_components(), 0 == $(".q_comp_list").length ? $(".components").append('<div style="padding-top: 10px; clear: both;" class="q_comp_list">' + q_components + "</div>") : $(".q_comp_list").html(q_components)
+        });
+        
+        $("#q_get_list_close").click(function() {
+            $(".q_comp_list").html("")
+        });
     }
 
     setInterval(q_updateEverything, 5e3);
