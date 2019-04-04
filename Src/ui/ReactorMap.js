@@ -34,8 +34,8 @@ RID.setModule("ui/ReactorMap", function() {
                 var i = this.reactor.getTile(r, e)
                 t += this.getTerrainHtml(i, this.getTerrainBorderHtml(i, this.getComponentHtml(i)))
             }
-        var a = 25 * this.reactor.getMeta().width,
-            n = 25 * this.reactor.getMeta().height
+        var a = 32 * this.reactor.getMeta().width,
+            n = 32 * this.reactor.getMeta().height
         return '<div class="reactorTable" style="width:' + a + "px; height:" + n + 'px">' + t + "</div>"
     }, t.prototype.getTerrainHtml = function(t, e) {
         var r = (t.getX() + t.getY()) % 4 + 1,
