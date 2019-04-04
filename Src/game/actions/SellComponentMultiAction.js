@@ -1,4 +1,7 @@
-define(["actions/SellComponentAction"], function(t) {
+RID.setModule("actions/SellComponentMultiAction", function(t) {
+
+    var t = RID.getModule("actions/SellComponentAction");
+
     var e = function(t) {
         this.tile = t, this.reactor = t.getReactor()
     }
@@ -12,4 +15,4 @@ define(["actions/SellComponentAction"], function(t) {
     }, e.prototype.sell = function(t) {
         this.tile && this.tile.getMeta() && (t ? this._sellMany() : this._sellOne(this.tile))
     }, e
-})
+}());

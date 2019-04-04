@@ -1,4 +1,7 @@
-define(["actions/BuyComponentAction"], function(t) {
+RID.setModule("actions/BuyComponentMultiAction", function() {
+
+    var t = RID.getModule("actions/BuyComponentAction");
+
     var e = function(t, e) {
         this.tile = t, this.reactor = t.getReactor(), this.componentMeta = e
     }
@@ -15,4 +18,4 @@ define(["actions/BuyComponentAction"], function(t) {
     }, e.prototype.build = function(t, e) {
         t ? this._restoreMany() : this._buildOrRestoreOne(this.tile, e)
     }, e
-})
+}());

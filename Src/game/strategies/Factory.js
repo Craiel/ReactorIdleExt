@@ -1,4 +1,26 @@
-define(["strategies/Cell", "strategies/PowerToMoneyConverter", "strategies/HeatToPowerConverter", "strategies/MaxPowerIncrease", "strategies/HeatAbsorber", "strategies/CellHeatProductionAmplifier", "strategies/HeatExchanger", "strategies/ResearchCenter", "strategies/BulkHeatToMoneyConverter", "strategies/Bank", "strategies/WaterPump", "strategies/WaterExchanger", "strategies/HeatInlet", "strategies/HeatOutlet", "strategies/HeatBooster", "strategies/Circulator"], function(e, t, r, a, n, o, s, g, i, l, u, c, H, C, f, y) {
+RID.setModule("strategies/Factory", function() {
+
+        var e = RID.getModule("strategies/Cell");
+        var t = RID.getModule("strategies/PowerToMoneyConverter");
+        var r = RID.getModule("strategies/HeatToPowerConverter");
+        var a = RID.getModule("strategies/MaxPowerIncrease");
+
+        var n = RID.getModule("strategies/HeatAbsorber");
+        var o = RID.getModule("strategies/CellHeatProductionAmplifier");
+        var s = RID.getModule("strategies/HeatExchanger");
+        var g = RID.getModule("strategies/ResearchCenter");
+
+        var i = RID.getModule("strategies/BulkHeatToMoneyConverter");
+        var l = RID.getModule("strategies/Bank");
+        var u = RID.getModule("strategies/WaterPump");
+        var c = RID.getModule("strategies/WaterExchanger");
+
+        var H = RID.getModule("strategies/HeatInlet");
+        var C = RID.getModule("strategies/HeatOutlet");
+        var f = RID.getModule("strategies/HeatBooster");
+        var y = RID.getModule("strategies/Circulator");
+
+
     var v = {
         Cell: e,
         PowerToMoneyConverter: t,
@@ -32,4 +54,4 @@ define(["strategies/Cell", "strategies/PowerToMoneyConverter", "strategies/HeatT
             return v[r] ? v[r].getInfoText ? v[r].getInfoText(e, t) : "" : void console.error("Unknown strategy: " + r)
         }
     }
-})
+}());

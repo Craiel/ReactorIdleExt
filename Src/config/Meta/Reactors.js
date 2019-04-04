@@ -1,5 +1,5 @@
 'use strict';
-define([], function() {
+RID.setModule("config/Meta/Reactors", function() {
     return [{
         id : "mini",
         name : "Island",
@@ -97,4 +97,4 @@ define([], function() {
         height : 21,
         layout : "wwwwwwwwwwwwwwwwwwwwwwwww                                                                                                                                                                                                                                                                                                                                                                                                                                                                  wwwwwwwwwwwwwwwwwwwwwwwww"
     }];
-});
+}());

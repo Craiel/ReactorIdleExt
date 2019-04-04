@@ -1,4 +1,4 @@
-define([], function() {
+RID.setModule("strategies/CellHeatProductionAmplifier", function() {
     var t = function(t) {
         this.tile = t, this.reactor = t.getReactor()
     }
@@ -18,4 +18,4 @@ define([], function() {
         var n = t.getUpgradeBonuses().components[e.id].isolationMultiplayer
         return e.strategy.heatProductionBonus * n
     }, t
-})
+}());

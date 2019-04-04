@@ -1,4 +1,7 @@
-define(["strategies/Factory"], function(t) {
+RID.setModule("game/Tile", function() {
+
+    var t = RID.getModule("strategies/Factory");
+
     var e = function(t, e, i, r) {
         this.x = t, this.y = e, this.reactor = r, this.terrain = i, this.heat = 0, this.water = 0, this.waterConsumption = 0, this.lifetime = null, this.bonuses = null, this.meta = null, this.strategy = null
     }
@@ -75,4 +78,4 @@ define(["strategies/Factory"], function(t) {
     }, e.prototype.updateFromSaveData = function(t) {
         t && (t[0] ? this.setComponent(this.reactor.getGame().getMeta().componentsById[t[0]]) : this.setComponent(null), this.heat = t[1], this.water = t[2] ? t[2] : 0, this.lifetime = t[3])
     }, e
-})
+}());

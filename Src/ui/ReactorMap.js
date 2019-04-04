@@ -1,4 +1,4 @@
-define([], function() {
+RID.setModule("ui/ReactorMap", function() {
     var t = function(t, e) {
         this.reactor = t, this.container = e, this.explosions = []
     }
@@ -63,4 +63,4 @@ define([], function() {
             "class": r
         }
     }, t
-})
+}());

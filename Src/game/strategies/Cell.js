@@ -1,4 +1,7 @@
-define(["actions/BuyComponentAction"], function(t) {
+RID.setModule("strategies/Cell", function() {
+
+    var t = RID.getModule("actions/BuyComponentAction");
+
     var e = function(t) {
         this.tile = t
     }
@@ -140,4 +143,4 @@ define(["actions/BuyComponentAction"], function(t) {
         var i = t.getUpgradeBonuses().components[e.id].heatProductionMultiplayer
         return e.strategy.heatProduction * i
     }, e
-})
+}());

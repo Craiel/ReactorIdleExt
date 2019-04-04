@@ -1,4 +1,9 @@
-define(["game/Tile", "calculators/Calculator", "base/EventManager"], function(t, e, i) {
+RID.setModule("game/Reactor", function() {
+
+    var t = RID.getModule("game/Tile");
+    var e = RID.getModule("calculators/Calculator");
+    var i = RID.getModule("base/EventManager");
+
     var o = function(o, s) {
         this.game = o, this.meta = s, this.calculator = new e(this), this.eventManager = new i, this.isBought = s.isBought ? !0 : !1, this.allowAutoRebuild = !0, this.power = 0, this.upgrades = {}, this.tiles = []
         for (var r = {
@@ -71,4 +76,4 @@ define(["game/Tile", "calculators/Calculator", "base/EventManager"], function(t,
         this.power = t[0], this.allowAutoRebuild = !!t[1], this.isBought = !!t[2], this.upgrades = t[3] ? t[3] : {}
         for (var e in this.tiles) this.tiles[e] && t[4][e] && this.tiles[e].updateFromSaveData(t[4][e])
     }, o
-})
+}());

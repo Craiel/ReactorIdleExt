@@ -1,4 +1,4 @@
-RID.rq["Main"] = function() {
+RID.setModule("Main", function() {
     var t = RID.getModule("config/Meta");
     var e = RID.getModule("game/Game");
     var a = RID.getModule("ui/App");
@@ -52,4 +52,4 @@ RID.rq["Main"] = function() {
     }, r.prototype.getUi = function() {
         return this.ui
     }, r
-}();
+}());

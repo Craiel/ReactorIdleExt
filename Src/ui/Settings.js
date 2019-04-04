@@ -1,4 +1,8 @@
-define(["base/UrlHandler", "base/SaveHandler"], function(t, a) {
+RID.setModule("ui/Settings", function() {
+
+    var t = RID.getModule("base/UrlHandler");
+    var a = RID.getModule("base/SaveHandler");
+
     var s = "settings",
         i = function(e) {
             this.main = e, this.saveHandler = this.main.getSaveHandler(), this.isVisible = !1
@@ -24,4 +28,4 @@ define(["base/UrlHandler", "base/SaveHandler"], function(t, a) {
     }, i.prototype.destroy = function() {
         this.main.getGame().getEventManager().removeListenerForType(s), this.isVisible = !1, $("#settings").remove(), $("#settingsBg").remove()
     }, i
-})
+}());

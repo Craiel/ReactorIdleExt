@@ -1,4 +1,4 @@
-define([], function() {
+RID.setModule("strategies/ResearchCenter", function() {
     var e = function(e) {
         this.tile = e
     }
@@ -14,4 +14,4 @@ define([], function() {
             c = a.amount ? a.meta.multiplayer : 1
         return t.strategy.researchProduction * r * o * c
     }, e
-})
+}());

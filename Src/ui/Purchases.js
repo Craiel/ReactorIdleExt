@@ -1,4 +1,7 @@
-define(["config/Meta"], function(t) {
+RID.setModule("ui/Purchases", function(t) {
+
+    var t = RID.getModule("config/Meta");
+
     var a = "purchases",
         r = function(e) {
             this.main = e
@@ -28,4 +31,4 @@ define(["config/Meta"], function(t) {
     }, r.prototype.destroy = function() {
         this.main.getGame().getEventManager().removeListenerForType(a), $("#purchases").remove(), $("#purchasesBg").remove()
     }, r
-})
+}());

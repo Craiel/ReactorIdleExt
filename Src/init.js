@@ -7,6 +7,10 @@ RID = {
         }
 
         return module;
+    },
+    setModule: function(e, m) {
+        RID.rq[e] = m;
+        console.info("Loaded Module: " + e);
     }
 };
 

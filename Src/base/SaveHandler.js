@@ -1,4 +1,7 @@
-define(["ext/LZString.js"], function(e) {
+RID.setModule("base/SaveHandler", function() {
+
+    var e = LZString;
+
     var t = function(e) {
         this.main = e, this.game = e.getGame(), this.saveInterval = null, this.saveVersion = 6, this.saveVariable = "reactorSave", logger.info("SaveHandler", "User hash: " + this.getUserHash())
     }
@@ -36,4 +39,4 @@ define(["ext/LZString.js"], function(e) {
         for (var e = "", t = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", a = 0; 64 > a; a++) e += t.charAt(Math.floor(Math.random() * t.length))
         return e
     }, t
-})
+}());

@@ -1,4 +1,4 @@
-define([], function() {
+RID.setModule("strategies/HeatToPowerConverter", function() {
     var t = function(t) {
         this.tile = t, this.reactor = t.getReactor()
     }
@@ -22,4 +22,4 @@ define([], function() {
         var i = t.getUpgradeBonuses().components[e.id].heatToPowerConversionMultiplayer
         return e.strategy.convertHeatToPower * i
     }, t
-})
+}());

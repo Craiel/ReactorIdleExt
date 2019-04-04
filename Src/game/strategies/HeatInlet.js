@@ -1,4 +1,4 @@
-define([], function() {
+RID.setModule("strategies/HeatInlet", function() {
     var t = function(t) {
         this.tile = t, this.reactor = t.getReactor()
     }
@@ -17,4 +17,4 @@ define([], function() {
     }, t.getMaxHeatTransfer = function(t, e) {
         return e.strategy.transferHeat * t.getUpgradeBonuses().components[e.id].heatInletMaxTransferMultiplayer
     }, t
-})
+}());

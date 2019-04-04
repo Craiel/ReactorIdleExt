@@ -1,4 +1,4 @@
-define([], function() {
+RID.setModule("strategies/WaterExchanger", function() {
     var t = function(t) {
         this.tile = t, this.reactor = t.getReactor()
     }
@@ -26,4 +26,4 @@ define([], function() {
         }
         t.length > 0 && n > 0 && this._calculateRound(i, n)
     }, t
-})
+}());

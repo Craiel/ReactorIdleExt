@@ -1,4 +1,4 @@
-define([], function() {
+RID.setModule("actions/SellComponentAction", function() {
     var t = function(t) {
         this.reactor = t.getReactor(), this.tile = t
     }
@@ -12,4 +12,4 @@ define([], function() {
     }, t.prototype.sell = function() {
         this.reactor.getGame().addMoney(this.getSellPrice(), !1), this.tile.setComponent(null)
     }, t
-})
+}());

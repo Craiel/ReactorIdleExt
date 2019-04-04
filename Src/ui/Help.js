@@ -1,4 +1,4 @@
-define([], function() {
+RID.setModule("ui/Help", function() {
     var t = function(i) {
         this.main = i, this.isVisible = !1
     }
@@ -15,4 +15,4 @@ define([], function() {
     }, t.prototype.destroy = function() {
         this.isVisible = !1, $("#help").remove(), $("#helpBg").remove()
     }, t
-})
+}());

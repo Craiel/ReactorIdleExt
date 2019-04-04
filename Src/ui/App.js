@@ -1,4 +1,13 @@
-define(["ui/Game", "ui/Reactors", "ui/Research", "ui/Upgrades", "ui/Settings", "ui/Purchases", "ui/Help"], function(e, s, i, a, r, n, o) {
+RID.setModule("ui/App", function() {
+
+    var e = RID.getModule("ui/Game");
+    var s = RID.getModule("ui/Reactors");
+    var i = RID.getModule("ui/Research");
+    var a = RID.getModule("ui/Upgrades");
+    var r = RID.getModule("ui/Settings");
+    var n = RID.getModule("ui/Purchases");
+    var o = RID.getModule("ui/Help");
+
     var h = "appUi",
         d = function(t) {
             this.main = t, this.game = t.getGame(), this.gameUi = null, this.reactorsUi = null, this.researchUi = null, this.upgradesUi = null, this.settingsUi = new r(t), this.purchasesUi = new n(t), this.helpUi = new o, this.lastReactorId = null
@@ -25,7 +34,13 @@ define(["ui/Game", "ui/Reactors", "ui/Research", "ui/Upgrades", "ui/Settings", "
     }, d.prototype.destroyReactors = function() {
         this.reactorsUi && (this.reactorsUi.destroy(), this.reactorsUi = null)
     }, d.prototype.displayGame = function(t) {
-        this.destroyReactors(), this.destroyGame(), this.destroyResearch(), this.destroyUpgrades(), this.gameUi = new e(this.game.getReactor(t)), this.gameUi.display($(".appContent")), this.lastReactorId = t
+        this.destroyReactors();
+            this.destroyGame();
+            this.destroyResearch();
+            this.destroyUpgrades();
+            this.gameUi = new e(this.game.getReactor(t));
+            this.gameUi.display($(".appContent"));
+            this.lastReactorId = t
     }, d.prototype.destroyGame = function() {
         this.gameUi && (this.gameUi.destroy(), this.gameUi = null)
     }, d.prototype.displayResearch = function() {
@@ -39,4 +54,4 @@ define(["ui/Game", "ui/Reactors", "ui/Research", "ui/Upgrades", "ui/Settings", "
     }, d.prototype.destroy = function() {
         this.game.getEventManager().removeListenerForType(h), this.container.html(""), this.container = null
     }, d
-})
+}());

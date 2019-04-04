@@ -1,5 +1,10 @@
 'use strict';
-define(["config/Meta/Reactors", "config/Meta/Components", "config/Meta/Upgrades", "config/Meta/Research"], function(reactors, components, upgrades, research) {
+RID.setModule("config/Meta", function() {
+    var reactors = RID.getModule("config/Meta/Reactors");
+    var components = RID.getModule("config/Meta/Components");
+    var upgrades = RID.getModule("config/Meta/Upgrades");
+    var research = RID.getModule("config/Meta/Research");
+
     var data = {
         version : 1,
         startingMoney : 1,
@@ -127,4 +132,4 @@ define(["config/Meta/Reactors", "config/Meta/Components", "config/Meta/Upgrades"
         data.purchasesById[data.purchases[i].id] = data.purchases[i];
     }
     return data;
-});
+}());

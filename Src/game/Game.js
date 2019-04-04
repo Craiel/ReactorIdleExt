@@ -1,4 +1,10 @@
-define(["game/Reactor", "base/EventManager", "game/PurchaseManager", "base/ConfirmedTimestamp"], function(t, e, s, r) {
+//RID.setModule("config/Meta/Components",
+RID.setModule("game/Game", function() {
+    var t = RID.getModule("game/Reactor");
+    var e = RID.getModule("base/EventManager");
+    var s = RID.getModule("game/PurchaseManager");
+    var r = RID.getModule("base/ConfirmedTimestamp");
+
     var n = function(r) {
         this.meta = r, this.money = r.startingMoney, this.totalMoney = 0, this.totalTicks = 0, this.researchPoints = r.startingResearchPoints, this.researches = {}, this.externalPurchases = {}, this.purchases = {}, this.reactors = {}
         for (var n in this.meta.reactors) {
@@ -91,4 +97,4 @@ define(["game/Reactor", "base/EventManager", "game/PurchaseManager", "base/Confi
             }
         }
     }, n
-})
+}());

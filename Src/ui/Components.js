@@ -1,4 +1,7 @@
-define(["game/actions/BuyComponentAction"], function(t) {
+RID.setModule("ui/Components", function() {
+
+    var t = RID.getModule("actions/BuyComponentAction");
+
     var n = "components",
         o = function(e) {
             this.reactor = e, this.game = e.getGame(), this.selectedComponent = null
@@ -40,4 +43,4 @@ define(["game/actions/BuyComponentAction"], function(t) {
     }, o.prototype.destroy = function() {
         this.game.getEventManager().removeListenerForType(n), this.reactor.getEventManager().removeListenerForType(n), this.container.html(""), this.container = null
     }, o
-})
+}());

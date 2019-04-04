@@ -1,4 +1,7 @@
-define(["game/actions/BuyResearchAction"], function(t) {
+RID.setModule("ui/Research", function(t) {
+
+    var t = RID.getModule("actions/BuyResearchAction");
+
     var a = "researchArea",
         r = function(e) {
             this.game = e
@@ -64,4 +67,4 @@ define(["game/actions/BuyResearchAction"], function(t) {
     }, r.prototype.destroy = function() {
         this.game.getEventManager().removeListenerForType(a), this.container.html(""), this.container = null
     }, r
-})
+}());

@@ -1,4 +1,4 @@
-define([], function() {
+RID.setModule("strategies/MaxPowerIncrease", function() {
     var e = function(e) {
         this.tile = e
     }
@@ -10,4 +10,4 @@ define([], function() {
         var n = e.getUpgradeBonuses().components[t.id].maxPowerMultiplayer
         return t.strategy.maxPowerIncrease * n
     }, e
-})
+}());

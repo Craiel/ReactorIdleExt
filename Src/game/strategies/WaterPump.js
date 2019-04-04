@@ -1,4 +1,8 @@
-define(["actions/BuyComponentAction", "strategies/WaterExchanger"], function(t, e) {
+RID.setModule("strategies/WaterPump", function() {
+
+    var t = RID.getModule("actions/BuyComponentAction");
+    var e = RID.getModule("strategies/WaterExchanger");
+
     var r = function(t) {
         this.tile = t, this.waterExchanger = new e(t)
     }
@@ -27,4 +31,4 @@ define(["actions/BuyComponentAction", "strategies/WaterExchanger"], function(t, 
         var r = t.getUpgradeBonuses().components[e.id].waterProductionMultiplayer
         return e.strategy.waterProduction * r
     }, r
-})
+}());

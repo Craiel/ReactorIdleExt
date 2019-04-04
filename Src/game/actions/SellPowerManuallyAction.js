@@ -1,4 +1,4 @@
-define([], function() {
+RID.setModule("actions/SellPowerManuallyAction", function() {
     var t = function(t) {
         this.reactor = t
     }
@@ -9,4 +9,4 @@ define([], function() {
             e = this.reactor.getGame().getPurchaseInfo("extramoney")
         t *= e.amount ? e.meta.multiplayer : 1, this.reactor.setPower(0), this.reactor.getGame().addMoney(t)
     }, t
-})
+}());

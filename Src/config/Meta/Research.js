@@ -1,5 +1,5 @@
 'use strict';
-define([], function() {
+RID.setModule("config/Meta/Research", function() {
     return [{
         id : "researchCenter",
         group : "1",
@@ -365,4 +365,4 @@ define([], function() {
         priceResearchPoints : 100,
         max : 1
     }];
-});
+}());

@@ -1,4 +1,7 @@
-define(["calculators/UpgradeCalculator"], function(e) {
+RID.setModule("calculators/Calculator", function(e) {
+
+    var e = RID.getModule("calculators/UpgradeCalculator");
+
     var t = function(t) {
         this.reactor = t, this.game = t.getGame(), this.upgradeBonusCalculator = new e(this.reactor)
     }
@@ -66,4 +69,4 @@ define(["calculators/UpgradeCalculator"], function(e) {
             a && a.getMeta() && a.getMeta().maxHeat && a.getHeat() > a.getMaxHeat() && (a.setComponent(null), this.reactor.getEventManager().invokeEvent(ReactorEvent.tileExplode, a))
         }
     }, t
-})
+}());

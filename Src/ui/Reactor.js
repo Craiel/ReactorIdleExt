@@ -1,4 +1,10 @@
-define(["game/actions/BuyComponentAction", "game/actions/BuyComponentMultiAction", "game/actions/SellComponentMultiAction", "ui/ReactorMap"], function(e, t, n, o) {
+RID.setModule("ui/Reactor", function() {
+
+    var e = RID.getModule("actions/BuyComponentAction");
+    var t = RID.getModule("actions/BuyComponentMultiAction");
+    var n = RID.getModule("actions/SellComponentMultiAction");
+    var o = RID.getModule("ui/ReactorMap");
+
     var r = "reactor",
         a = function(e) {
             this.reactor = e, this.container = null, this.reactorMap = null, this.selectedComponent = null
@@ -45,4 +51,4 @@ define(["game/actions/BuyComponentAction", "game/actions/BuyComponentMultiAction
     }, a.prototype.destroy = function() {
         this.reactorMap.destroy(), this.reactorMap = null, this.reactor.getGame().getEventManager().removeListenerForType(r), this.reactor.getEventManager().removeListenerForType(r), this.container.html(""), this.container = null
     }, a
-})
+}());

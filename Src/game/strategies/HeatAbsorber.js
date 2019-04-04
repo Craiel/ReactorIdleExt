@@ -1,4 +1,4 @@
-define([], function() {
+RID.setModule("strategies/HeatAbsorber", function() {
     var t = function(t) {
         this.tile = t, this.reactor = t.getReactor()
     }
@@ -7,4 +7,4 @@ define([], function() {
     }, t.prototype.calculate = function(t) {
         this.tile.setHeat(this.tile.getHeat() * (1 - this.tile.getMeta().strategy.loseHeat))
     }, t
-})
+}());

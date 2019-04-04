@@ -1,4 +1,4 @@
-define([], function() {
+RID.setModule("actions/SellUpgradeAction", function() {
     var e = function(e, t) {
         this.reactor = e, this.game = e.getGame(), this.upgradeMeta = t
     }
@@ -15,4 +15,4 @@ define([], function() {
     }, e.prototype.sell = function() {
         this.game.addMoney(.8 * this.getPrice(), !1), this.game.addResearchPoints(.8 * this.getResearchPointsPrice()), this.reactor.setUpgrade(this.upgradeMeta.id, this.reactor.getUpgrade(this.upgradeMeta.id) - 1)
     }, e
-})
+}());

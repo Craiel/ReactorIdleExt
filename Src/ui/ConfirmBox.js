@@ -1,4 +1,4 @@
-define([], function() {
+RID.setModule("ui/ConfirmBox", function() {
     var i = function(t, i, n) {
         this.id = String(Math.round(1e13 * Math.random())), this.title = t, this.message = i, this.okButtonTitle = "Ok", this.cancelButtonTitle = "Cancel", this.okCallback = n, this.style = "warning"
     }
@@ -30,4 +30,4 @@ define([], function() {
         var t = $("body")
         t.find("#confirmBoxBg" + this.id).remove(), t.find("#confirmBox" + this.id).remove()
     }, i
-})
+}());

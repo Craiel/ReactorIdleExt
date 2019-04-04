@@ -1,4 +1,4 @@
-define([], function() {
+RID.setModule("base/UrlHandler", function() {
     var n = function() {
         var n = {}
         window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(e, o, r) {
@@ -12,4 +12,4 @@ define([], function() {
             return e.kongregate_username && "kong" == e.ref ? "kongregate" : "fgl" == e.ref ? "fgl" : "notdoppler" == e.ref ? "notdoppler" : -1 != String(window.location.href).search("localhost") ? "localhost" : "direct"
         }
     }
-})
+}());

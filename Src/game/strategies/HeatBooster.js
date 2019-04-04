@@ -1,4 +1,7 @@
-define(["actions/BuyComponentAction"], function(t) {
+RID.setModule("strategies/HeatBooster", function(t) {
+
+    var t = RID.getModule("actions/BuyComponentAction");
+
     var e = function(t) {
         this.tile = t, this.reactor = t.getReactor()
     }
@@ -12,4 +15,4 @@ define(["actions/BuyComponentAction"], function(t) {
             n.canAutoRestore() && (n.build(), this.tile.getReactor().getEventManager().invokeEvent(ReactorEvent.tileMetaChanged, this.tile))
         }
     }, e
-})
+}());

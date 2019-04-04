@@ -1,5 +1,5 @@
 'use strict';
-define([], function() {
+RID.setModule("config/Meta/Upgrades", function() {
     return [{
         id : "officeSellPower",
         name : "Office sell power",
@@ -494,4 +494,4 @@ define([], function() {
             multiplayer : 2
         }
     }];
-});
+}());

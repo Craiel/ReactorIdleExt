@@ -1,4 +1,4 @@
-define([], function() {
+RID.setModule("base/EventManager", function() {
     var e = function() {
         this.events = {}
     }
@@ -13,4 +13,4 @@ define([], function() {
         if (this.events[e])
             for (var o in this.events[e]) this.events[e][o] && this.events[e][o](t, n, s, i, v)
     }, e
-})
+}());

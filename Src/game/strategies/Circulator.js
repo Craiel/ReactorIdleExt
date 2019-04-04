@@ -1,4 +1,4 @@
-define([], function() {
+RID.setModule("strategies/Circulator", function() {
     var t = function(t) {
         this.tile = t, this.reactor = t.getReactor()
     }
@@ -18,4 +18,4 @@ define([], function() {
         var r = t.getUpgradeBonuses().components[e.id].circulatorMaxPowerMultiplayer
         return e.strategy.maxWaterBonus * r
     }, t
-})
+}());

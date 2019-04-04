@@ -1,4 +1,4 @@
-define([], function() {
+RID.setModule("actions/BuyResearchAction", function() {
     var e = function(e, t) {
         this.game = e, this.researchMeta = t
     }
@@ -19,4 +19,4 @@ define([], function() {
         var e = Number(this.game.getResearch(this.researchMeta.id));
         (!e || isNaN(e)) && (e = 0), this.game.setResearch(this.researchMeta.id, e + 1)
     }, e
-})
+}());

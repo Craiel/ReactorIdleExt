@@ -1,4 +1,7 @@
-define(["game/actions/SellPowerManuallyAction"], function(n) {
+RID.setModule("ui/Overview", function() {
+
+    var n = RID.getModule("actions/SellPowerManuallyAction");
+
     var t = "overviewArea",
         a = function(e) {
             this.reactor = e, this.game = e.getGame()
@@ -33,4 +36,4 @@ define(["game/actions/SellPowerManuallyAction"], function(n) {
     }, a.prototype.destroy = function() {
         this.game.getEventManager().removeListenerForType(t), this.reactor.getEventManager().removeListenerForType(t), this.container.html(""), this.container = null
     }, a
-})
+}());

@@ -1,4 +1,7 @@
-define(["game/actions/BuyReactorAction"], function(e) {
+RID.setModule("ui/Reactors", function() {
+
+    var e = RID.getModule("actions/BuyReactorAction");
+
     var a = "worldsArea",
         n = function(t) {
             this.game = t
@@ -48,4 +51,4 @@ define(["game/actions/BuyReactorAction"], function(e) {
     }, n.prototype.destroy = function() {
         this.game.getEventManager().removeListenerForType(a), this.container.html(""), this.container = null
     }, n
-})
+}());

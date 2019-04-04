@@ -1,5 +1,5 @@
 'use strict';
-define([], function() {
+RID.setModule("config/Meta/Components", function() {
     return [{
         id : "windTurbine",
         name : "Wind turbine",
@@ -550,4 +550,4 @@ define([], function() {
             researchProduction : 40
         }
     }];
-});
+}());

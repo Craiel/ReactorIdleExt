@@ -1,4 +1,9 @@
-define(["game/strategies/Factory", "game/Tile", "game/actions/SellComponentAction"], function(e, n, a) {
+RID.setModule("ui/Info", function() {
+
+    var e = RID.getModule("strategies/Factory");
+    var n = RID.getModule("game/Tile");
+    var a = RID.getModule("actions/SellComponentAction");
+
     var i = "infoBox",
         o = function(t) {
             this.reactor = t, this.game = t.getGame(), this.lastShowInfoEvent = null
@@ -77,4 +82,4 @@ define(["game/strategies/Factory", "game/Tile", "game/actions/SellComponentActio
     }, o.prototype.destroy = function() {
         this.game.getEventManager().removeListenerForType(i), this.container.html(""), this.container = null
     }, o
-})
+}());

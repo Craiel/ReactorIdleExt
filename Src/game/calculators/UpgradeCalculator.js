@@ -1,4 +1,4 @@
-define([], function() {
+RID.setModule("calculators/UpgradeCalculator", function() {
     var e = function(e) {
         this.reactor = e, this.game = e.getGame()
         var t = this,
@@ -178,4 +178,4 @@ define([], function() {
     };
 
     return e
-});
+}());

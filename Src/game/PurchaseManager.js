@@ -1,4 +1,4 @@
-define([], function() {
+RID.setModule("game/PurchaseManager", function() {
     var e = "PurchaseManager",
         r = function(e) {
             this.game = e
@@ -24,4 +24,4 @@ define([], function() {
         var a = this.game.getMeta().purchasesById[o]
         return a ? void("bonusTicks" == a.type ? (logger.info(e, "Removed " + a.bonusTicks + " bonus ticks"), this.game.removeBonusTicks(a.bonusTicks)) : "oneTime" == a.type && (logger.info(e, "Removed " + o + " purchase"), this.game.removePurchase(o))) : void logger.error(e, "Unknown purchase to remove " + o)
     }, r
-})
+}());

@@ -1,4 +1,4 @@
-define([], function() {
+RID.setModule("base/server/Dummy", function() {
     var t = "Dummy",
         e = function(t) {
             this.main = t, this.purchases = [], this._isApiLoaded = !1
@@ -25,4 +25,4 @@ define([], function() {
     }, e.prototype.submitStatistic = function(t, e) {
         logger.info("Dummy", "Submitted statistic " + t + ":" + e)
     }, e
-})
+}());

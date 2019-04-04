@@ -1,4 +1,4 @@
-define([], function() {
+RID.setModule("strategies/HeatExchanger", function() {
     var t = function(t) {
         this.tile = t, this.reactor = t.getReactor()
     }
@@ -30,4 +30,4 @@ define([], function() {
             e.givesHeatOut ? t.setHeat(c) : t.setHeat(t.getHeat() + c)
         })
     }, t
-})
+}());

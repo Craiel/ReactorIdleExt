@@ -1,4 +1,10 @@
-define(["game/actions/BuyUpgradeAction", "game/actions/SellUpgradeAction", "game/calculators/UpgradeCalculator", "ui/ConfirmBox"], function(t, a, n, r) {
+RID.setModule("ui/Upgrades", function() {
+
+    var t = RID.getModule("actions/BuyUpgradeAction");
+    var a = RID.getModule("actions/SellUpgradeAction");
+    var n = RID.getModule("calculators/UpgradeCalculator");
+    var r = RID.getModule("ui/ConfirmBox");
+
     var i = "upgradesArea",
         o = function(e) {
             this.reactor = e, this.game = this.reactor.getGame(), this.upgradeCalculator = new n(this.reactor)
@@ -71,4 +77,4 @@ define(["game/actions/BuyUpgradeAction", "game/actions/SellUpgradeAction", "game
     }, o.prototype.destroy = function() {
         this.game.getEventManager().removeListenerForType(i), this.container.html(""), this.container = null
     }, o
-})
+}());

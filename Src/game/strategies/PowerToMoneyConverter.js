@@ -1,4 +1,4 @@
-define([], function() {
+RID.setModule("strategies/PowerToMoneyConverter", function() {
     var t = function(t) {
         this.tile = t, this.reactor = t.getReactor()
     }
@@ -15,4 +15,4 @@ define([], function() {
     }, t.prototype._getConvertAmount = function() {
         return t._getConvertAmount(this.reactor, this.tile.getMeta()) * this.tile.getBonuses().powerToMoneyMultiplayer
     }, t
-})
+}());
