@@ -1,4 +1,5 @@
 RID = {
+    isRunning: false,
     rq: {},
     getModule: function(e) {
         var module = RID.rq[e];
