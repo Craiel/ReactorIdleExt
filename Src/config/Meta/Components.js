@@ -420,7 +420,7 @@ RID.setModule("config/Meta/Components", function() {
         requiresResearch : "office",
         strategy : {
             type : "PowerToMoneyConverter",
-            maxSellPower : 5
+            maxSellPower : 10
         }
     }, {
         id : "office2",
@@ -436,7 +436,7 @@ RID.setModule("config/Meta/Components", function() {
         requiresResearch : "office2",
         strategy : {
             type : "PowerToMoneyConverter",
-            maxSellPower : 100
+            maxSellPower : 200
         }
     }, {
         id : "office3",
@@ -452,7 +452,7 @@ RID.setModule("config/Meta/Components", function() {
         requiresResearch : "office3",
         strategy : {
             type : "PowerToMoneyConverter",
-            maxSellPower : 2500
+            maxSellPower : 10000
         }
     }, {
         id : "office4",
@@ -468,7 +468,7 @@ RID.setModule("config/Meta/Components", function() {
         requiresResearch : "office4",
         strategy : {
             type : "PowerToMoneyConverter",
-            maxSellPower : 6E4
+            maxSellPower : 200000
         }
     }, {
         id : "office5",
@@ -484,7 +484,7 @@ RID.setModule("config/Meta/Components", function() {
         requiresResearch : "office5",
         strategy : {
             type : "PowerToMoneyConverter",
-            maxSellPower : 9E5
+            maxSellPower : 3000000
         }
     }, {
         id : "bank",
@@ -499,7 +499,7 @@ RID.setModule("config/Meta/Components", function() {
         requiresResearch : "bank2",
         strategy : {
             type : "Bank",
-            sellAmountBonus : 1.5
+            sellAmountBonus : 1.9
         }
     }, {
         id : "researchCenter",
