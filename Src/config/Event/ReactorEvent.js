@@ -1,5 +1,5 @@
 'use strict';
-var ReactorEvent = {
+let ReactorEvent = {
     powerChanged : "powerChanged",
     tickResult : "tickResult",
     tileExplode : "tileExplode",

@@ -1,5 +1,5 @@
 'use strict';
-var UiEvent = {
+let UiEvent = {
     showInfo : "showInfo",
     hideInfo : "hideInfo",
     componentSelected : "componentSelected",

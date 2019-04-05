@@ -5,12 +5,12 @@ RID.setModule("config/Meta/Upgrades", function() {
         name : "Office sell power",
         group : "1",
         price : 1e3,
-        priceIncrease : 10,
+        priceIncrease : 8,
         requiresResearch : "office",
         bonus : {
             type : "powerSellAmount",
             componentTypeId : "office",
-            multiplayer : 2
+            multiplayer : 2.25
         }
     }, {
         id : "bankEffectiveness",

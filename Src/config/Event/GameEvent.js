@@ -1,5 +1,5 @@
 'use strict';
-var GameEvent = {
+let GameEvent = {
     moneyChanged : "moneyChanged",
     bonusTicksChanged : "bonusTicksChanged",
     researchPointsChanged : "researchPointsChanged"
